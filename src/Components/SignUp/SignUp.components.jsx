@@ -55,7 +55,7 @@ function SignUpForm() {
         "------------displayName",
         createUserDocumentFromAuth(user, { displayName })
       );
-      // resetForFields();
+      resetForFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("cannot create user, email already exist");
