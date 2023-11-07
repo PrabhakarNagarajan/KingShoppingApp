@@ -9,15 +9,13 @@ import CartDropDown from "../../cart-dropdown/cart-dropdown.components";
 import { CartContext } from "../../../Context/cart.context";
 
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
-  console.log(currentUser);
+  const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
 
   const signOutHandler = async () => {
     await SignOutUser();
-    setCurrentUser(null);
   };
-
+  console.log(isCartOpen);
   return (
     <Fragment>
       <div className="navigation-container">
