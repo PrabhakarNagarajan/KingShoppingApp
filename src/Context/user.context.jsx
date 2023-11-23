@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import { createAction } from "../Utils/firebase/reducer/reducer.utils";
+import { createAction } from "../Utils/reducer/reducer.utils";
 import {
   onAuthStateChangedLister,
   createUserDocumentFromAuth,
