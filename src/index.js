@@ -4,11 +4,11 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "redux";
+import { Provider } from "react-redux";
 import { CategoriesProvider } from "./Context/category.context";
 import { UserProvider } from "./Context/user.context";
 import { CartProvider } from "./Context/cart.context";
-import store from "./store/store";
+import { store } from "./store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
