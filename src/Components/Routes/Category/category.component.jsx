@@ -9,14 +9,14 @@ import { categoriesSelector } from "../../../store/categories/categories.selecto
 const Category = () => {
   const { category } = useParams();
   console.log("render/re-rendering category component");
-  const categoriesMap = useSelector(categoriesSelector);
+  const categories = useSelector(categoriesSelector);
 
-  const [products, setProducts] = useState(categoriesMap[category]);
+  const [products, setProducts] = useState(categories[category]);
 
   useEffect(() => {
     console.log("effect fired calling setProducts");
-    setProducts(categoriesMap[category]);
-  }, [category, categoriesMap]);
+    setProducts(categories[category]);
+  }, [category, categories]);
 
   return (
     <Fragment>
