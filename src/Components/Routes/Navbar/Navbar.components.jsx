@@ -2,21 +2,18 @@ import { Fragment } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as CrwonLogo } from "../../assets/image/crown.svg";
 import "./Navbar.style.scss";
-
-import { SignOutUser } from "../../../Utils/firebase/firebase.utils";
 import CartIcon from "../../Cart-icon/cart-icon.componets";
 import CartDropDown from "../../cart-dropdown/cart-dropdown.components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentUser } from "../../../store/user/user.selector";
 import { selectIsCartOpen } from "../../../store/cart/cart.selector";
+import { signOutStart } from "../../../store/user/user.action";
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
-
-  const signOutHandler = async () => {
-    await SignOutUser();
-  };
+  const dispatch = useDispatch();
+  const signOutUser = () => dispatch(signOutStart());
   console.log(isCartOpen);
   return (
     <Fragment>
@@ -31,7 +28,7 @@ const Navigation = () => {
             SHOP
           </Link>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutHandler}>
+            <span className="nav-link" onClick={signOutUser}>
               SIGN OUT
             </span>
           ) : (
