@@ -24,6 +24,8 @@ const Category = () => {
     setProducts(categories[category]);
   }, [category, categories]);
 
+  //return statement
+
   return (
     <Fragment>
       <h2 className="category-title">{category.toUpperCase()}</h2>
