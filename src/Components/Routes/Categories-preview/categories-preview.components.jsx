@@ -27,3 +27,5 @@ const CategoriesPreview = () => {
 };
 
 export default CategoriesPreview;
+
+// just a placeholder
